@@ -29,13 +29,19 @@ app.get("/signup", async (_, res) => {
     res.render("signup")
 })
 
+let found;
+
 app.get("/admin", (_, res) => {
 
     const data = localStorage.getItem("admin.json");
+    const parsed = JSON.parse(data);
+
+    const users = parsed.find(user => user.userName === found.userName && user.password === found.password)
+    console.log(users);
 
     if (data) {
         res.render("admin", {
-            user: JSON.parse(data),
+            users: users
         });
     } else {
         res.redirect("/login");
@@ -63,33 +69,24 @@ app.post("/signup", async (req, res) => {
         userName: req.body.username,
         role: req.body.role,
         password: req.body.password
-    }) 
+    })
 
     res.redirect("/")
+    await fs.writeFile("./data/data.json", JSON.stringify(parsed, null, 4));
+})
 
-    // const foundUser = parsed.find(user => user.userName === req.body.username)
-    
-    // if (req.body.role === "admin") {
-        //     res.redirect("/")
-        // } else {
-            //     res.redirect("/");
-            // }
-
-            await fs.writeFile("./data/data.json", JSON.stringify(parsed, null, 4));
-        })
-        
 app.post("/login", async (req, res) => {
-    
+
     const admin = await fs.readFile("./data/data.json", "utf8");
     const parsed = JSON.parse(admin);
     const usersData = [];
-    
-    const found = parsed.find(user => user.userName === req.body.username && user.password === req.body.password);
+
+    found = parsed.find(user => user.userName === req.body.username && user.password === req.body.password);
 
     usersData.unshift(found)
-    
+
     if (found) {
-        
+
         localStorage.setItem("admin.json", JSON.stringify(usersData, null, 4));
         res.redirect("/admin");
     } else {
