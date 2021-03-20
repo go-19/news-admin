@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <main>
+    <div class="container my-5 py-5 w-50 ml-auto mr-auto">
+      <div class="d-flex align-items-center justify-content-between">
+        <h2 class="mb-0">
+          <%=user.name%>
+        </h2>
+        <a class="logout btn btn-warning text-white mb-0" href=''>LOGOUT</a>
+      </div>
+      <form 
+        class="mt-5"
+        action="/admin"
+        method="POST" 
+        enctype="multipart/form-data"
+      >
+        <input class="form-control mb-3" autocomplete="off" type="text" name="title" placeholder="Title">
+        <textarea class="form-control mb-3" name="more"></textarea>
+        <input type="file" name="file">
+        <button class="btn btn-info">Submit</button>
+      </form>
+    </div>
+  </main>
+
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "BACKEDN-9",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "node-localstorage": "^2.1.6",
+    "web-push": "^3.4.4"
+  }
+}
