@@ -35,8 +35,6 @@ app.get("/admin", async (req, res) => {
     } else {
         res.render("/");
     }
-
-    console.log(req);
 })
 
 app.post("/admin", async (req, res) => {
