@@ -1,12 +1,8 @@
 [
-  {
-    "name": "G`ayrat",
-    "userName": "gog19dev",
-    "password": "dev2001"
-  },
-  {
-    "name": "Javohir aka",
-    "userName": "javohir1993",
-    "password": "chegabayev"
-  }
+    {
+        "name": "gayrat",
+        "userName": "gog19dev",
+        "role": "admin",
+        "password": "admin"
+    }
 ]

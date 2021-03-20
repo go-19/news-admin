@@ -1,5 +1,8 @@
-{
-    "name": "G`ayrat",
-    "userName": "gog19dev",
-    "password": "dev2001"
-}
+[
+    {
+        "name": "gayrat",
+        "userName": "gog19dev",
+        "role": "admin",
+        "password": "admin"
+    }
+]
