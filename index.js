@@ -23,28 +23,30 @@ app.get("/login", async (_, res) => {
     res.render("login")
 })
 
-app.get("/admin", async (req, res) => {
+app.get("/admin", (_, res) => {
 
-    const data = await fs.readFile("./scratch/admin.txt", "utf8");
+    const data = localStorage.getItem("admin.json");
     const parsed = JSON.parse(data);
 
     if (parsed) {
         res.render("admin", {
-            user: parsed,
+            user: JSON.parse(data),
         });
     } else {
-        res.render("/");
+        res.redirect("/login");
+        alert("Please confirm your identity to access the admin panel")
     }
 })
 
 app.post("/admin", async (req, res) => {
 
-    console.log(req.body.name);
-
-    // const data = await fs.readFile("./scratch/admin.txt", "utf8");
-    // const parsed = JSON.parse(data);
-
-    // localStorage.clear("./scratch/admin.txt");
+    if (req.body.logout === '') {
+        localStorage.removeItem("admin.json");
+        res.redirect("/")
+        console.log('ok');
+    } else {
+        console.log('not found');
+    }
 })
 
 app.post("/login", async (req, res) => {
@@ -56,7 +58,7 @@ app.post("/login", async (req, res) => {
 
     if (found) {
 
-        localStorage.setItem("admin.txt", JSON.stringify(found));
+        localStorage.setItem("admin.json", JSON.stringify(found, null, 4));
         res.redirect("/admin");
 
     } else {

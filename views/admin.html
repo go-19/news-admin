@@ -14,17 +14,15 @@
 
   <main>
     <div class="container my-5 py-5 w-50 ml-auto mr-auto">
-      <form 
-      action="/admin"
-      method="POST" 
-      enctype="multipart/form-data"
-      >
-      <div class="d-flex align-items-center mb-4 justify-content-between">
+
+      <form class="d-flex align-items-center mb-4 justify-content-between" method="POST" action="/admin">
         <h2 class="mb-0">
           <%=user.name%>
         </h2>
-        <button class="logout btn btn-warning text-white mb-0" name="log">LOGOUT</button>
-      </div>
+        <button class="logout btn btn-warning text-white mb-0" name="logout">LOGOUT</button>
+      </form>
+
+      <form action="/admin" method="POST" enctype="multipart/form-data">
         <input class="form-control mb-3" autocomplete="off" type="text" name="title" placeholder="Title">
         <textarea class="form-control mb-3" placeholder="Description" name="more"></textarea>
         <input type="file" name="file">
