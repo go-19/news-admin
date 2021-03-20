@@ -35,6 +35,18 @@ app.get("/admin", async (req, res) => {
     } else {
         res.render("/");
     }
+
+    console.log(req);
+})
+
+app.post("/admin", async (req, res) => {
+
+    console.log(req.body.name);
+
+    // const data = await fs.readFile("./scratch/admin.txt", "utf8");
+    // const parsed = JSON.parse(data);
+
+    // localStorage.clear("./scratch/admin.txt");
 })
 
 app.post("/login", async (req, res) => {
