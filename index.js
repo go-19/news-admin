@@ -61,7 +61,7 @@ app.post("/admin", async (req, res) => {
         res.render("index", {
             title: req.body.title,
             more: req.body.more,
-            img: req.files.file.name
+            img: `../images/${req.files.file.name}`
         })
 
         res.redirect("/")
