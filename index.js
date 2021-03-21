@@ -149,7 +149,9 @@ app.post("/login", async (req, res) => {
     if (found) {
 
         localStorage.setItem("admin.json", JSON.stringify(found, null, 4));
-        res.redirect("/admin");
+        
+        res.redirect("/admin")
+
     } else {
         res.redirect("/login");
     }
