@@ -19,28 +19,8 @@ body {
   font-family: 'Mulish', sans-serif;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-}
-
 main {
   flex-grow: 1;
-}
-
-.card-img-top {
-  position: relative;
-  z-index: 1;
-}
-
-.card-img-top::before {
-  content: "";
-  width: 100%;
-  height: 100%;
-  background-color: red;
-  display: block;
-  position: absolute;
-  z-index: 20;
 }
 
 .news-img-wrapper {
@@ -104,4 +84,8 @@ main {
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;  
   overflow: hidden;
+}
+
+.news-img {
+  object-position: 50% 50% !important;
 }
