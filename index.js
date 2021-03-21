@@ -7,7 +7,6 @@ const fileUpload = require("express-fileupload");
 const path = require("path");
 
 const Date = require("./date/date.js");
-console.log(Date.month);
 
 const { LocalStorage } = require("node-localstorage");
 
@@ -19,14 +18,20 @@ app.use(fileUpload());
 
 app.set("view engine", "html");
 
-app.engine("html", ejs.renderFile)
+app.engine("html", ejs.renderFile);
 
-app.use("/assets", express.static("static"))
+app.use("/assets", express.static("static"));
+
+app.use( "/images", express.static("images") );
 
 app.get("/", async (_, res) => {
 
     const news = await fs.readFile("./data/newsData.json", "utf8");
     const parsed = JSON.parse(news);
+
+    for (let news of parsed) {
+        console.log(news.title);
+    }
 
     res.render("index", {
         data: parsed
@@ -75,7 +80,8 @@ app.post("/admin", async (req, res) => {
             id: parsed.length + 1,
             title: req.body.title,
             more: req.body.more,
-            img: `../images/${file.name}`,
+            img: file.name,
+            date: [Date.month, Date.monthDay, Date.year, Date.startTime()]
         }
 
         parsed.unshift(data);

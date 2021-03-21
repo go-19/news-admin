@@ -19,5 +19,5 @@ module.exports = {
 	month,
 	monthDay,
 	year,
-    startTime
+  startTime
 }

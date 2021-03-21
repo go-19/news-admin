@@ -1,12 +1,38 @@
 [
     {
-        "title": "salom",
-        "more": "1222222",
-        "img": "../images/apple.png"
+        "id": 3,
+        "title": "Iceland volcano: eruption under way on mountain near Reykjavik – video report",
+        "more": "A volcano has erupted in Iceland near the capital Reykjavik after thousands of small earthquakes in the area in recent weeks, the Icelandic meteorological office has said.\r\n\r\nA red cloud lit up the night sky after the eruption began in Fagradalsfjall on Friday about 40km (25 miles) from the capital Reykjavik. A no-fly zone has been established in the area but the eruption appeared to be subsiding as of Saturday evening. “The fissure is estimated to be about 200 metres (219 yards) long,” the IMO said.\r\n\r\nPolice and coastguard officials raced to the scene late on Friday and the public has been advised to stay away from the area.\r\n\r\n“I can see the glowing red sky from my window,” said Rannveig Gudmundsdottir, a resident in the town of Grindavik, only 8 km (5 miles) from the eruption. “Everyone here is getting into their cars to drive up there,” she said.\r\n\r\nMore than 40,000 earthquakes have occurred in the area in the past four weeks, a huge jump from the 1,000-3,000 earthquakes registered each year since 2014.\r\n\r\nThe Krysuvik volcanic system, which does not have a central volcano, is located south of Mount Fagradalsfjall on the Reykjanes peninsula in south-west Iceland.",
+        "img": "volcano.png",
+        "date": [
+            3,
+            21,
+            2021,
+            "15:31"
+        ]
     },
     {
-        "title": "salom",
-        "more": "1222222",
-        "img": "../images/apple.png"
+        "id": 2,
+        "title": "The stars of The Falcon and the Winter Soldier: ‘We’re the Turner and Hooch of Marvel’",
+        "more": "Anthony Mackie and Sebastian Stan discuss the new Disney+ series, patriotism and Chadwick Boseman’s legacy\r\n\r\n@steverose7\r\nSat 20 Mar 2021 08.00 GMT\r\n\r\n14\r\n75\r\nSebastian Stan, AKA Bucky Barnes, AKA The Winter Soldier, is attempting to characterise his relationship with his on-screen partner Anthony Mackie, AKA Sam Wilson, AKA The Falcon: “I grew up with buddy comedies like 48 Hours, Coming to America, you know, Lethal Weapon, Turner and Hooch. All those movies I grew up with. So for me, it was like I was making an 80s film with Anthony Mackie.” Old superheroes never die; they just get recast. Or they miraculously survive the incident that supposedly killed them off. Or, increasingly, they come back for their own small-screen spin-off. The last two, if not the first, apply to Mackie and Stan’s double act The Falcon and The Winter Soldier. In the Marvel movies, both characters were always in the shadow of Chris Evans’s Captain America – two Hooches to his Turner. Bucky Barnes made his entrance as Cap’s wartime comrade in 2011’s Captain America: The First Avenger. He supposedly died in that movie, only to return as Captain America’s brainwashed, metal-armed nemesis The Winter Soldier in 2014. Mackie’s winged war veteran Sam Wilson entered the story at that stage, and both characters soldiered through numerous Marvel campaigns (Ant-Man, Black Panther, Captain America: Civil War) before being vaporised at the end of Avengers: Infinity War. Fortunately they survived that, too.",
+        "img": "marvel.png",
+        "date": [
+            3,
+            21,
+            2021,
+            "15:28"
+        ]
+    },
+    {
+        "id": 1,
+        "title": "Elon Musk declared himself 'technoking'. He's just a hyper-capitalist clown Akin Olla",
+        "more": "Elon Musk has declared himself Technoking of Tesla. It’s a fitting title for a man with feudal aspirations. He already has a history of poor labor practices, and generally displays a vast amount of hubris relative to his own actual personal productivity. He is no doubt an excellent businessman – and showman – but remains greatly undeserving of the cult of personality that surrounds his alleged genius. In reality Musk is an egotistical demagogue who has amassed too much power, and poses a danger to the future of workers.\r\n\r\nMusk lives in an alternate reality of relentless self-branding and self-congratulation. He promised – and then failed – to deliver 1,000 ventilators to the state of California at the beginning of the pandemic. He also volunteered to design a miniature submarine for the purpose of rescuing 12 children trapped in an underground cave in Thailand, only to be bested by a cave diver who actually knew what he was doing – a diver whom Musk then insinuated was a pedophile. Musk has a touchy ego, and that itself would be a problem even if he wasn’t as wealthy as he is.",
+        "img": "elon.png",
+        "date": [
+            3,
+            21,
+            2021,
+            "15:23"
+        ]
     }
 ]

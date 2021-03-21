@@ -73,6 +73,11 @@ main {
   position: relative;
   z-index: 1;
   width: 350px !important;
+  margin-right: 30px;
+}
+
+.wrapper:nth-child(3n) {
+  margin-right: 0;
 }
 
 .news-content {
@@ -94,7 +99,7 @@ main {
 }
 
 .line-clamp {
-  height: 90px;
+  height: 87px;
   display: -webkit-box;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;  
