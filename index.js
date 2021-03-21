@@ -29,12 +29,10 @@ app.get("/", async (_, res) => {
     const news = await fs.readFile("./data/newsData.json", "utf8");
     const parsed = JSON.parse(news);
 
-    for (let news of parsed) {
-        console.log(news.title);
-    }
+    let cut = parsed.splice(0, 6);
 
     res.render("index", {
-        data: parsed
+        data: cut
     })
 })
 
