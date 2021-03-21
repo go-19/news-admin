@@ -41,10 +41,16 @@ app.get("/login", async (_, res) => {
     res.render("login")
 })
 
-app.get("/read-more", async (req, res) => {
-    console.log(req.params);
+app.get("/read-more/:id", async (req, res) => {
 
-    res.render("read-more")
+    const news = await fs.readFile("./data/newsData.json", "utf8");
+    const parsed = JSON.parse(news);
+
+    const found = parsed.find(item => item.id === Number(req.params.id));
+
+    res.render("read-more", {
+        newsObj: found
+    })
 })
 
 app.get("/about", async (_, res) => {
