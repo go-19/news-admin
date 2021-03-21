@@ -41,8 +41,9 @@ app.get("/login", async (_, res) => {
     res.render("login")
 })
 
-app.get("/read-more", async (_, res) => {
+app.get("/read-more:id", async (req, res) => {
 
+    console.log(req.params);
     res.render("read-more")
 })
 
