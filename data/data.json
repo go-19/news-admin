@@ -1,5 +1,11 @@
 [
     {
+        "name": "SWE",
+        "userName": "gog19dev",
+        "role": "admin",
+        "password": "12"
+    },
+    {
         "name": "Omon",
         "userName": "omon1995",
         "role": "admin",

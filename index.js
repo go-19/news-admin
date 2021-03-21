@@ -3,12 +3,16 @@ const ejs = require("ejs");
 const fs = require("fs").promises;
 const alert = require("alert");
 const app = express();
+const fileUpload = require("express-fileupload");
+const path = require("path");
 
 const { LocalStorage } = require("node-localstorage");
 
 global.localStorage = new LocalStorage('./scratch');
 
 app.use(express.urlencoded({ extended: true }));
+
+app.use(fileUpload());
 
 app.set("view engine", "html");
 
@@ -46,13 +50,35 @@ app.get("/admin", (_, res) => {
 
 app.post("/admin", async (req, res) => {
 
-    if (req.body.logout === '') {
+    const file = req.files.file;
+
+    if (req.body.title) {
+
+        file.mv(path.join(__dirname, "/images", file.name), (err) => {
+            console.log(err);
+        })
+
+        res.render("index", {
+            title: req.body.title,
+            more: req.body.more,
+            img: req.files.file.name
+        })
+
+        res.redirect("/")
+
+    } else if (req.body.logout === '') {
         localStorage.removeItem("admin.json");
         res.redirect("/")
     } else {
         console.log('not found');
     }
 })
+
+// app.post("/admin", async (req, res) => {
+
+
+//     res.redirect("/")
+// })
 
 app.post("/signup", async (req, res) => {
 
