@@ -18,11 +18,13 @@ app.set("view engine", "html");
 
 app.engine("html", ejs.renderFile)
 
+app.use("/assets", express.static("static"))
+
 app.get("/", async (_, res) => {
 
     const news = await fs.readFile("./data/newsData.json", "utf8");
     const parsed = JSON.parse(news);
-    
+
     res.render("index", {
         data: parsed
     })
@@ -67,6 +69,7 @@ app.post("/admin", async (req, res) => {
         })
 
         const data = {
+            id: parsed.length + 1,
             title: req.body.title,
             more: req.body.more,
             img: `../images/${file.name}`
