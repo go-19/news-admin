@@ -6,6 +6,9 @@ const app = express();
 const fileUpload = require("express-fileupload");
 const path = require("path");
 
+const Date = require("./date/date.js");
+console.log(Date.month);
+
 const { LocalStorage } = require("node-localstorage");
 
 global.localStorage = new LocalStorage('./scratch');
@@ -72,7 +75,7 @@ app.post("/admin", async (req, res) => {
             id: parsed.length + 1,
             title: req.body.title,
             more: req.body.more,
-            img: `../images/${file.name}`
+            img: `../images/${file.name}`,
         }
 
         parsed.unshift(data);
