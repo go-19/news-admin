@@ -41,9 +41,24 @@ app.get("/login", async (_, res) => {
     res.render("login")
 })
 
-app.get("/signup", async (_, res) => {
+app.get("/about", async (_, res) => {
 
+    res.render("about")
+})
+
+app.get("/signup", async (_, res) => {
+    
     res.render("signup")
+})
+
+app.get("/more", async (_, res) => {
+
+    const news = await fs.readFile("./data/newsData.json", "utf8");
+    const parsed = JSON.parse(news);
+
+    res.render("more", {
+        data: parsed
+    })
 })
 
 app.get("/admin", (_, res) => {

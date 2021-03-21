@@ -34,26 +34,7 @@
 
   <main class="my-5">
     <div class="container">
-      <ul class="list-unstyled d-flex flex-wrap">
-        <% for (let news of data) { %>
-          <li class="wrapper mb-5">
-            <div class="news-img-wrapper overflow-hidden rounded">
-              <img class="news-img img-fluid" src="../images/<%=news.img%>" alt="img">
-            </div>
-            <div class="news-content p-3 d-flex flex-column">
-              <div class="mt-auto">
-                <div class="d-flex justify-content-between mb-3">
-                  <span class="w-25 bg-danger text-white rounded text-center">General</span>
-                  <span class="text-white"><span class="pr-3"><%=news.date[3]%></span><%=news.date[0]%>/<%=news.date[1]%>/<%=news.date[2]%></span>
-                </div>
-                <a class="h5 news-link text-decoration-none text-white line-clamp"
-                  href="/read-more" target="_blank"><%=news.title%></a>
-              </div>
-            </div>
-          </li>   
-        <% } %>
-      </ul>
-      <a class="btn btn-success d-flex justify-content-center w-25 ml-auto mr-auto" href="/more">More</a>
+      <h1 class="text-center mt-5">About our team.</h1>
     </div>
   </main>
 
