@@ -13,8 +13,11 @@
 <body>
 
   <main>
-    <div class="container mb-5 mt-2 py-5 w-50 ml-auto mr-auto">
-      <h1 class="text-center mb-5 h3">Welcome to the admin panel.</h1>
+    <div class="container mb-5 mt-2 py-5 w-50 ml-auto mr-auto d-flex flex-column">
+      <div class="d-flex flex-column align-items-center">
+        <a class="text-decoration-none font-weight-bold h1 mb-0 mb-2" href="/">LOGO</a>
+        <h1 class="text-center mb-5 h3">Welcome to the admin panel.</h1>
+      </div>
       <form class="d-flex align-items-center mb-4 justify-content-between" method="POST" action="/admin">
         <h2 class="mb-0">
           <%=users.name%>

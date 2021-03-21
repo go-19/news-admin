@@ -29,19 +29,14 @@ app.get("/signup", async (_, res) => {
     res.render("signup")
 })
 
-let found;
-
 app.get("/admin", (_, res) => {
 
     const data = localStorage.getItem("admin.json");
     const parsed = JSON.parse(data);
 
-    const users = parsed.find(user => user.userName === found.userName && user.password === found.password)
-    console.log(users);
-
-    if (data) {
+    if (parsed) {
         res.render("admin", {
-            users: users
+            users: parsed
         });
     } else {
         res.redirect("/login");
@@ -79,15 +74,14 @@ app.post("/login", async (req, res) => {
 
     const admin = await fs.readFile("./data/data.json", "utf8");
     const parsed = JSON.parse(admin);
-    const usersData = [];
 
-    found = parsed.find(user => user.userName === req.body.username && user.password === req.body.password);
+    const found = parsed.find(user => user.userName === req.body.username && user.password === req.body.password)
 
-    usersData.unshift(found)
+    console.log(req.body.password, req.body.username, found);
 
     if (found) {
 
-        localStorage.setItem("admin.json", JSON.stringify(usersData, null, 4));
+        localStorage.setItem("admin.json", JSON.stringify(found, null, 4));
         res.redirect("/admin");
     } else {
         res.redirect("/login");
