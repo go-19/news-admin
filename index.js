@@ -50,21 +50,26 @@ app.get("/admin", (_, res) => {
 
 app.post("/admin", async (req, res) => {
 
-    const file = req.files.file;
-
     if (req.body.title) {
+
+        const news = await fs.readFile("./data/newsData.json", "utf8");
+        const parsed = JSON.parse(news);
+
+        const file = req.files.file;
 
         file.mv(path.join(__dirname, "/images", file.name), (err) => {
             console.log(err);
         })
 
-        res.render("index", {
+        const data = {
             title: req.body.title,
             more: req.body.more,
-            img: `../images/${req.files.file.name}`
-        })
+            img: `../images/${file.name}`
+        }
 
-        res.redirect("/")
+        parsed.unshift(data);
+
+        await fs.writeFile("./data/newsData.json", JSON.stringify(parsed));
 
     } else if (req.body.logout === '') {
         localStorage.removeItem("admin.json");
@@ -73,12 +78,6 @@ app.post("/admin", async (req, res) => {
         console.log('not found');
     }
 })
-
-// app.post("/admin", async (req, res) => {
-
-
-//     res.redirect("/")
-// })
 
 app.post("/signup", async (req, res) => {
 
@@ -102,8 +101,6 @@ app.post("/login", async (req, res) => {
     const parsed = JSON.parse(admin);
 
     const found = parsed.find(user => user.userName === req.body.username && user.password === req.body.password)
-
-    console.log(req.body.password, req.body.username, found);
 
     if (found) {
 
