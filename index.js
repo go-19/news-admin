@@ -18,9 +18,14 @@ app.set("view engine", "html");
 
 app.engine("html", ejs.renderFile)
 
-app.get("/", (_, res) => {
+app.get("/", async (_, res) => {
 
-    res.render("index")
+    const news = await fs.readFile("./data/newsData.json", "utf8");
+    const parsed = JSON.parse(news);
+    
+    res.render("index", {
+        data: parsed
+    })
 })
 
 app.get("/login", async (_, res) => {
