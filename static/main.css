@@ -46,8 +46,8 @@ main {
 .news-img-wrapper {
   position: relative;
   z-index: 1;
-  width: 398px !important;
-  height: 400px !important;
+  width: 350px !important;
+  height: 350px !important;
 }
 
 .wrapper:hover .news-img {
@@ -62,7 +62,7 @@ main {
   position: absolute;
   z-index: 1;
   content: "";
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.6);
   width: 100%;
   height: 100%;
   top: 0;
@@ -72,6 +72,7 @@ main {
 .wrapper {
   position: relative;
   z-index: 1;
+  width: 350px !important;
 }
 
 .news-content {
@@ -79,6 +80,7 @@ main {
   z-index: 1;
   bottom: 0;
   height: 100%;
+  width: 100%;
 }
 
 .news-link::before {
@@ -92,6 +94,7 @@ main {
 }
 
 .line-clamp {
+  height: 90px;
   display: -webkit-box;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;  
