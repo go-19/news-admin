@@ -41,6 +41,11 @@ app.get("/login", async (_, res) => {
     res.render("login")
 })
 
+app.get("/read-more", async (_, res) => {
+
+    res.render("read-more")
+})
+
 app.get("/about", async (_, res) => {
 
     res.render("about")
