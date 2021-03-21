@@ -69,7 +69,9 @@ app.post("/admin", async (req, res) => {
 
         parsed.unshift(data);
 
-        await fs.writeFile("./data/newsData.json", JSON.stringify(parsed));
+        await fs.writeFile("./data/newsData.json", JSON.stringify(parsed, null, 4));
+
+        res.redirect("/")
 
     } else if (req.body.logout === '') {
         localStorage.removeItem("admin.json");
