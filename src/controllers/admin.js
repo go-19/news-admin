@@ -1,3 +1,8 @@
+const express = require("express");
+const app = express();
+
+app.set("views", "src/views")
+
 const { LocalStorage } = require("node-localstorage");
 global.localStorage = new LocalStorage('./scratch');
 

@@ -12,6 +12,8 @@ app.use(fileUpload());
 
 app.set("view engine", "html");
 
+app.set("views", "src/views");
+
 app.engine("html", ejs.renderFile);
 
 app.use("/assets", express.static("static"));

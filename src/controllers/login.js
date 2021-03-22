@@ -6,6 +6,8 @@ global.localStorage = new LocalStorage('./scratch');
 
 app.set("view engine", "html");
 
+app.set("/views", "src/views");
+
 const User = require("../models/login");
 
 module.exports = {
