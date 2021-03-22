@@ -131,6 +131,7 @@ app.post("/signup", async (req, res) => {
     parsed.unshift({
         name: req.body.name,
         userName: req.body.username,
+        role: req.body.role,
         password: req.body.password
     })
 
