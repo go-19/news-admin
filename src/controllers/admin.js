@@ -18,12 +18,11 @@ module.exports = {
   },
   POST: async (req, res) => {
 
-    const admin = Admin.newsMaker(req.body, req.files);
-
-    if (admin) {
-      res.redirect("/")
-    } else if (logout === '') {
+    if (req.body.title) {
+      Admin.newsMaker(req.body, req.files);
+    } else if (req.body.logout === '') {
       localStorage.removeItem("admin.json");
+      res.redirect("/")
     } else {
       console.log('not found');
     }
