@@ -1,13 +1,13 @@
 const Date = require("../../date/date.js");
+const fs = require("fs").promises;
+const path = require("path");
 
-const newsMaker = async ({ title, more }, files) => {
+const newsMaker = async ({ title, more }, { file }) => {
     const fileName = path.join(__dirname, "../../data", "newsData.json")
     const admin = await fs.readFile(fileName, "utf8");
     const parsed = JSON.parse(admin);
 
-    const file = files.file;
-
-    file.mv(path.join(__dirname, "/images", file.name), (err) => {
+    file.mv(path.join(__dirname, "../../images", file.name), (err) => {
         console.log(err);
     })
 
@@ -15,7 +15,7 @@ const newsMaker = async ({ title, more }, files) => {
         id: parsed.length + 1,
         title,
         more,
-        img: files.img,
+        img: file.name,
         date: [Date.month, Date.monthDay, Date.year, Date.startTime()]
     }
 

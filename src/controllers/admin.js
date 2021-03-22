@@ -18,8 +18,10 @@ module.exports = {
   },
   POST: async (req, res) => {
 
+
     if (req.body.title) {
       Admin.newsMaker(req.body, req.files);
+      res.redirect("/");
     } else if (req.body.logout === '') {
       localStorage.removeItem("admin.json");
       res.redirect("/")

@@ -7,7 +7,7 @@ const checkUser = async ({ username, password }) => {
     const admin = await fs.readFile(file, "utf8");
     const parsed = JSON.parse(admin);
 
-    const found = parsed.find(user => user.username === username && user.password === password)
+    const found = parsed.find(user => user.userName === username && user.password === password)
 
     return found
 }
