@@ -14,7 +14,6 @@ module.exports = {
       });
     } else {
       res.redirect("/login");
-      alert("Please confirm your identity to access the admin panel")
     }
   },
   POST: async (req, res) => {
